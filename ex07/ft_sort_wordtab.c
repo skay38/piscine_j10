@@ -24,17 +24,14 @@ int		ft_strlen(char *str)
 
 int		ft_strlen_2(char **argv)
 {
-	int i;
 	int	c;
 
-	c = 1;
-	i = 0;
-	while (argv[c] != '\0')
+	c = 0;
+	while (argv[c] != 0)
 	{
-		i = i + ft_strlen(argv[c]) + 1;
 		c++;
 	}
-	return (i);
+	return (c);
 }
 
 int		ft_strcmp(char *s1, char *s2)
@@ -67,7 +64,7 @@ void	ft_sort_wordtab(char **tab)
 	i = 0;
 	while (i < ft_strlen_2(tab) - 1)
 	{
-		if (ft_strcmp(tab[i], tab[i + 1]) == -1)
+		if (ft_strcmp(tab[i], tab[i + 1]) == 1)
 		{
 			temp = tab[i];
 			tab[i] = tab[i + 1];
